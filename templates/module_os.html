@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{##Inheriting the base template.#}
+
+{% block title %}
+
+{% endblock %}
+
+{% block head %}
+DISPLAY
+{% endblock %}
+
+
+{% block body %}
+{#    # The card which in the left part of the page.#}
+{#    # And it used the bootstrap template.#}
+    <div class="ml-n5">
+    <div class="card  m-lg-5 " style="width: 18rem;left: -107px">
+      <div class="card-body">
+        <h5 class="card-title">All assignments</h5>
+        <p class="card-text">Click here to display the assessments you want to check.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <a href="{{url_for('display.ddl')}}" class="card-link" style="color: red">CLOSE TO THE DDL !!!</a>
+        </li>
+        <li class="list-group-item">
+            <a href="{{url_for('display.module_web')}}" class="card-link">XJCO2011</a>
+        </li>
+        <li class="list-group-item">
+            <a href="{{url_for('display.module_os')}}" class="card-link">XJCO2211</a>
+        </li>
+        <li class="list-group-item">
+            <a href="{{url_for('display.module_flfa')}}" class="card-link">XJCO2321</a>
+        </li>
+        <li class="list-group-item">
+            <a href="{{url_for('display.module_nc')}}" class="card-link">XJCO2421</a>
+        </li>
+        <li class="list-group-item">
+            <a href="{{url_for('display.module_adi')}}" class="card-link">XJCO2711</a>
+        </li>
+        <li class="list-group-item">
+        <a href="{{url_for('display.finish')}}" class="card-link">FINISHED&nbsp; &nbsp;&nbsp; &nbsp;&ensp;   </a>
+        <a href="{{url_for('display.unfinish')}}" class="card-link">UNFINISHED</a>
+        </li>
+      </ul>
+      <div class="card-body">
+        <a href="{{url_for('display.all_module')}}" class="card-link">MODULE LIST</a>
+        <a href="{{url_for('display.display')}}" class="card-link">ASSESSMENT</a>
+      </div>
+    </div>
+    </div>
+
+{#    # The card which in the right part of the page.#}
+{#    # And it used the bootstrap template.#}
+<div class="card bg-dark text-white " style="height: 30rem; width: 55rem; left: 450px; position:fixed; z-index:999; top:106px;" >
+    <div>
+        <ul style="position:fixed; z-index:999; top:140px; left: 458px;">
+             <ul class="list-group list-group-horizontal" style="color: #005cbf">
+                 <li class="list-group-item" style="width: 157px; height: 3.3rem; background-color: lightsteelblue">TITLE</li>
+                 <li class="list-group-item" style="width: 157px; height: 3.3rem; background-color: lightsteelblue">DESCRIPTION</li>
+                 <li class="list-group-item" style="width: 157px; height: 3.3rem; background-color: lightsteelblue">DEADLINE</li>
+                 <li class="list-group-item" style="width: 157px; height: 3.3rem; background-color: lightsteelblue">IF FINISH</li>
+                 <li class="list-group-item" style="width: 157px; height: 3.3rem; background-color: lightsteelblue">MODULE</li>
+             </ul>
+             {% for i in module_os %}
+                    <ul class="list-group list-group-horizontal" style="color: #171a1d">
+                      <li class="list-group-item" style="width: 157px; height: 3.3rem">{{ i.title }}</li>
+                      <li class="list-group-item" style="width: 157px; height: 3.3rem">{{ i.description }}</li>
+                      <li class="list-group-item" style="width: 157px; height: 3.3rem">{{ i.ddl }}</li>
+                      <li class="list-group-item" style="width: 157px; height: 3.3rem">{{ i.finish }}</li>
+                      <li class="list-group-item" style="width: 157px; height: 3.3rem">{{ i.module_id }}</li>
+                    </ul>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

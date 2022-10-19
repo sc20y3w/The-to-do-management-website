@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{##Inheriting the base template.#}
+
+{% block title %}
+
+{% endblock %}
+
+{% block head %}
+HELP
+{% endblock %}
+
+{% block body %}
+{#    # The card which in the left part of the page.#}
+{#    # And it used the bootstrap template.#}
+    <div class="ml-n5">
+    <div class="card  m-lg-5 " style="width: 18rem;left: -107px">
+      <div class="card-body">
+        <h5 class="card-title">How can we help you?</h5>
+        <p class="card-text">Select the help you need.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <a href="{{url_for('contact')}}" class="card-link">CONTACT US</a>
+        </li>
+        <li class="list-group-item">
+            <a href="{{url_for('about')}}" class="card-link">ABOUT US</a>
+        </li>
+        <li class="list-group-item">
+            <a href="{{url_for('reference')}}" class="card-link">REFERENCE</a>
+        </li>
+      </ul>
+      <div class="card-body">
+        <a href="{{url_for('index')}}" class="card-link">HOME</a>
+      </div>
+    </div>
+    </div>
+
+{#    # The card which in the right part of the page.#}
+{#    # And it used the bootstrap template.#}
+    <div class="card bg-dark text-white " style="height: 30rem; width: 55rem; left: 450px; position:fixed; z-index:999; top:106px;" >
+      <div class="card-img-overlay">
+          <div style="position:relative; top :42px; left: 82px;">
+            <h5 class="card-title">REFERENCE</h5>
+            <p class="card-text">&nbsp; &nbsp;&nbsp; &nbsp;&ensp;</p>
+            <p class="card-text">1.background image:</p>
+            <p class="card-text">https://www.zmtc.com/bizhi/360.html</p>
+            <p class="card-text">2.Picture in the card:</p>
+            <p class="card-text">https://desk.zol.com.cn/bizhi/5607_69825_2.html</p>
+            <p class="card-text">3.Bootstrap:</p>
+            <p class="card-text">https://v4.bootcss.com/</p>
+          </div>
+      </div>
+      <div style="position:absolute; top :43px; left: 500px; ">
+          <img src="../static/display.jpg" width="290" height="388" alt="A beautiful picture">
+      </div>
+    </div>
+{% endblock %}

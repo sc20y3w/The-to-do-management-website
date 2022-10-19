@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{##Inheriting the base template.#}
+
+{% block title %}
+
+{% endblock %}
+
+{% block head %}
+OPERATION
+{% endblock %}
+
+{% block body %}
+{#    # The card which in the left part of the page.#}
+{#    # And it used the bootstrap template.#}
+<div class="ml-n5">
+    <div class="card  m-lg-5 " style="width: 18rem;left: -107px">
+      <div class="card-body">
+        <h5 class="card-title">Operation options</h5>
+        <p class="card-text">Click the action you want to perform.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <a href="{{url_for('operation.mark')}}" class="card-link">MARK FINISH</a>
+        </li>
+        <li class="list-group-item">
+            <a href="{{url_for('operation.add_assessment')}}" class="card-link">ADD ASSESSMENT</a>
+        </li>
+        <li class="list-group-item">
+            <a href="{{url_for('operation.delete')}}" class="card-link">DELETE ASSESSMENT</a>
+        </li>
+      </ul>
+      <div class="card-body">
+        <a href="{{url_for('index')}}" class="card-link">HOME</a>
+      </div>
+    </div>
+    </div>
+
+{#    # The card which in the right part of the page.#}
+{#    # And it used the bootstrap template.#}
+<div class="card bg-dark text-white " style="height: 30rem; width: 55rem; left: 450px; position:fixed; z-index:999; top:106px;" >
+    <div>
+        <ul style="position:fixed; z-index:999; top:140px; left: 458px;">
+             <ul class="list-group list-group-horizontal" style="color: #005cbf">
+                 <li class="list-group-item" style="width: 157px; height: 3.3rem; background-color: lightsteelblue">TITLE</li>
+                 <li class="list-group-item" style="width: 157px; height: 3.3rem; background-color: lightsteelblue">DESCRIPTION</li>
+                 <li class="list-group-item" style="width: 157px; height: 3.3rem; background-color: lightsteelblue">DEADLINE</li>
+                 <li class="list-group-item" style="width: 157px; height: 3.3rem; background-color: lightsteelblue">IF FINISH</li>
+                 <li class="list-group-item" style="width: 157px; height: 3.3rem; background-color: lightsteelblue">MODULE</li>
+             </ul>
+            {% for i in total %}
+                <ul class="list-group list-group-horizontal" style="color: #171a1d">
+                  <li class="list-group-item" style="width: 157px; height: 3.3rem">{{ i.title }}</li>
+                  <li class="list-group-item" style="width: 157px; height: 3.3rem">{{ i.description }}</li>
+                  <li class="list-group-item" style="width: 157px; height: 3.3rem">{{ i.ddl }}</li>
+                  <a  href="{{url_for('operation.search_mark', id=i.id)}}">
+                     <li class="list-group-item" style="width: 157px; height: 3.3rem" >{{ i.finish }}
+                        <button type="submit" class="btn btn-outline-primary btn-sm" name="search_mark" style="left: 1057px; position:fixed; z-index:50;">Mark</button>
+                     </li>
+                  </a>
+                  <li class="list-group-item" style="width: 157px; height: 3.3rem">{{ i.module_id }}</li>
+                </ul>
+            {% endfor %}
+            </ul>
+    </div>
+</div>
+{% endblock %}

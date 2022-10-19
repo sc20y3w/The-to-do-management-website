@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{##Inheriting the base template.#}
+
+{% block title %}
+
+{% endblock %}
+
+{% block head %}
+DO IT NOW
+{% endblock %}
+
+{% block body %}
+{#    # The home page.#}
+
+{#    # Some statement about the function of this website.#}
+{#    # But it's just enumeration.#}
+<div class="card bg-transparent text-light border border-secondary rounded-pill" style="height: 200px; width: 1100px; position:fixed; z-index:999; top:90px">
+  <div class="card-img-overlay" style="height: 30rem; width: 55rem; left: 330px; position:fixed; z-index:999; top:120px;">
+    <h5 class="card-title">OPERATE</h5>
+    <p class="card-text">1.You can add your assessments by clicking "Add assessments" under "Operation".</p>
+    <p class="card-text">2.You can modify the information about added events and update the list.</p>
+  </div>
+</div>
+<div class="card bg-transparent text-light border border-secondary rounded-pill" style="height: 200px; width: 1100px; position:fixed; z-index:999; top:310px;">
+  <div class="card-img-overlay" style="height: 30rem; width: 55rem; left: 330px; position:fixed; z-index:999; top:340px;">
+    <h5 class="card-title">DISPLAY</h5>
+    <p class="card-text">1.You can click "DISPLAY" to display all assessments, or you can view them in modules according to the card prompts.</p>
+    <p class="card-text">2.You can click "Close to DDL!!" under" DISPLAY ". To check on urgent assessments.</p>
+  </div>
+</div>
+<div class="card bg-transparent text-light border border-secondary rounded-pill" style="height: 200px; width: 1100px; position:fixed; z-index:999; top:530px;">
+  <div class="card-img-overlay" style="height: 30rem; width: 55rem; left: 330px; position:fixed; z-index:999; top:560px;">
+    <h5 class="card-title">WELCOME</h5>
+    <p class="card-text">Welcome to your arrival, so, now start to complete these matters!!</p>
+  </div>
+</div>
+{% endblock %}

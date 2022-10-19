@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{##Inheriting the base template.#}
+
+{% block title %}
+
+{% endblock %}
+
+{% block head %}
+OPERATION
+{% endblock %}
+
+{% block body %}
+{#    # The card which in the left part of the page.#}
+{#    # And it used the bootstrap template.#}
+<div class="ml-n5">
+    <div class="card  m-lg-5 " style="width: 18rem;left: -107px">
+      <div class="card-body">
+        <h5 class="card-title">Operation options</h5>
+        <p class="card-text">Click the action you want to perform.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <a href="{{url_for('operation.mark')}}" class="card-link">MARK FINISH</a>
+        </li>
+        <li class="list-group-item">
+            <a href="{{url_for('operation.add_assessment')}}" class="card-link">ADD ASSESSMENT</a>
+        </li>
+        <li class="list-group-item">
+            <a href="{{url_for('operation.delete')}}" class="card-link">DELETE ASSESSMENT</a>
+        </li>
+      </ul>
+      <div class="card-body">
+        <a href="{{url_for('index')}}" class="card-link">HOME</a>
+      </div>
+    </div>
+    </div>
+
+{#    # Some statement about the function of this page.#}
+<div class="card bg-transparent text-light border border-secondary rounded-pill" style="height: 200px; width: 730px; position:fixed; z-index:999; top:90px; left: 560px">
+  <div class="card-img-overlay" style="height: 30rem; width: 55rem; left: 625px; position:fixed; z-index:999; top:120px;">
+    <h5 class="card-title">MARK FINISH</h5>
+    <p class="card-text">1.If you complete an assessment, you can click the "MARK" key under "MARK FINISH" to change it.</p>
+    <p class="card-text">2.Similarly, you can also click the "Mark" key to change the task marked completed to unfinished.</p>
+  </div>
+</div>
+<div class="card bg-transparent text-light border border-secondary rounded-pill" style="height: 200px; width: 730px; position:fixed; z-index:999; top:310px; left: 560px">
+  <div class="card-img-overlay" style="height: 30rem; width: 55rem; left: 625px; position:fixed; z-index:999; top:322px;">
+    <h5 class="card-title">ADD ASSESSMENT</h5>
+    <p class="card-text">You can add a task, but it's important to note that you </p><p class="card-text text-danger" style="background-color: #ffdf7e;width: 390px ">can't add an assessment outside of an existing module</p>
+    <p class="card-text">because the site only supports some of the assessments specified on "Minerva".</p>
+  </div>
+</div>
+<div class="card bg-transparent text-light border border-secondary rounded-pill" style="height: 200px; width: 730px; position:fixed; z-index:999; top:530px; left: 560px">
+  <div class="card-img-overlay" style="height: 30rem; width: 55rem; left: 625px; position:fixed; z-index:999; top:560px;">
+    <h5 class="card-title">OPERATE</h5>
+    <p class="card-text">1.You can add your assessments by clicking "Add assessments" under "Operation".</p>
+    <p class="card-text">2.You can modify the information about added events and update the list.</p>
+  </div>
+</div>
+{% endblock %}

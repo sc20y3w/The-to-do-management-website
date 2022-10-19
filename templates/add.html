@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{##Inheriting the base template.#}
+
+{% block title %}
+
+{% endblock %}
+
+{% block head %}
+OPERATION
+{% endblock %}
+
+{% block body %}
+{#    # The card which in the left part of the page.#}
+{#    # And it used the bootstrap template.#}
+<div class="ml-n5">
+    <div class="card  m-lg-5 " style="width: 18rem;left: -107px">
+      <div class="card-body">
+        <h5 class="card-title">Operation options</h5>
+        <p class="card-text">Click the action you want to perform.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <a href="{{url_for('operation.mark')}}" class="card-link">MARK FINISH</a>
+        </li>
+        <li class="list-group-item">
+            <a href="{{url_for('operation.add_assessment')}}" class="card-link">ADD ASSESSMENT</a>
+        </li>
+        <li class="list-group-item">
+            <a href="{{url_for('operation.delete')}}" class="card-link">DELETE ASSESSMENT</a>
+        </li>
+      </ul>
+      <div class="card-body">
+        <a href="{{url_for('index')}}" class="card-link">HOME</a>
+      </div>
+    </div>
+</div>
+
+{#    # The card which in the right part of the page.#}
+{#    # And it used the bootstrap template.#}
+<div class="card bg-dark text-white " style="height: 30rem; width: 55rem; left: 450px; position:fixed; z-index:999; top:106px;" >
+    # The input box.
+    <form action="{{ request.path }}" method = "post">
+    <div class="input-group flex-nowrap" style="height: 2.35rem; width: 33rem; left: 500px; position:fixed; z-index:999; top:145px;">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="addon-wrapping">Assessment title</span>
+      </div>
+      <input type="text" id="title" class="form-control" placeholder="eg: coursework1" name="title" aria-describedby="addon-wrapping">
+    </div>
+    <div class="input-group flex-nowrap" style="height: 2.35rem; width: 33rem; left: 500px; position:fixed; z-index:999; top:215px;">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="addon-wrapping">Description</span>
+      </div>
+      <input type="text" id="description" class="form-control" placeholder="eg: A web" name="description" aria-describedby="addon-wrapping">
+    </div>
+    <div class="input-group flex-nowrap" style="height: 2.35rem; width: 33rem; left: 500px; position:fixed; z-index:999; top:285px;">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="addon-wrapping">Deadline</span>
+      </div>
+      <input type="date" id="ddl" class="form-control" placeholder="eg: 2022-11-06" name="ddl" aria-describedby="addon-wrapping">
+    </div>
+    <div class="input-group flex-nowrap" style="height: 2.35rem; width: 33rem; left: 500px; position:fixed; z-index:999; top:355px;">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="addon-wrapping">If finish</span>
+      </div>
+      <input type="text" id="finish" class="form-control" placeholder="eg: True/False" name="finish" aria-describedby="addon-wrapping">
+    </div>
+    <div class="input-group flex-nowrap" style="height: 2.35rem; width: 33rem; left: 500px; position:fixed; z-index:999; top:425px;">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="addon-wrapping">Module id</span>
+      </div>
+      <input type="text" id="module_id" class="form-control" placeholder="eg: XJCOxxxx" name="module_id" aria-describedby="addon-wrapping">
+    </div>
+{#    # The submit button.#}
+    <div style="height: 2.35rem; width: 33rem; left: 500px; position:fixed; z-index:999; top:495px;">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">ADD</button>
+    </div>
+{#    # A beautiful picture, I like it very much!#}
+    </form>
+    <div style="position:absolute; top :44px; left: 630px; ">
+          <img src="../static/display.jpg" width="200" height="388" alt="A beautiful picture">
+    </div>
+</div>
+
+{% endblock %}

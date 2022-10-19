@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{##Inheriting the base template.#}
+
+{% block title %}
+
+{% endblock %}
+
+{% block head %}
+HELP
+{% endblock %}
+
+{% block body %}
+{#    # The card which in the left part of the page.#}
+{#    # And it used the bootstrap template.#}
+<div class="ml-n5">
+    <div class="card  m-lg-5 " style="width: 18rem;left: -107px">
+      <div class="card-body">
+        <h5 class="card-title">How can we help you?</h5>
+        <p class="card-text">Select the help you need.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <a href="{{url_for('contact')}}" class="card-link">CONTACT US</a>
+        </li>
+        <li class="list-group-item">
+            <a href="{{url_for('about')}}" class="card-link">ABOUT US</a>
+        </li>
+        <li class="list-group-item">
+            <a href="{{url_for('reference')}}" class="card-link">REFERENCE</a>
+        </li>
+      </ul>
+      <div class="card-body">
+        <a href="{{url_for('index')}}" class="card-link">HOME</a>
+      </div>
+    </div>
+</div>
+{#    # Some statement about the function of this page.#}
+<div class="card bg-transparent text-light border border-secondary rounded-pill" style="height: 200px; width: 730px; position:fixed; z-index:999; top:90px; left: 560px">
+  <div class="card-img-overlay" style="height: 30rem; width: 55rem; left: 625px; position:fixed; z-index:999; top:120px;">
+    <h5 class="card-title">CONTACT US</h5>
+    <p class="card-text">1.If you have any questions, please contact us, and we will do our best to help you.</p>
+    <p class="card-text">2.You can choose to send emails or phone calls or text messages.</p>
+  </div>
+</div>
+<div class="card bg-transparent text-light border border-secondary rounded-pill" style="height: 200px; width: 730px; position:fixed; z-index:999; top:310px; left: 560px">
+  <div class="card-img-overlay" style="height: 30rem; width: 55rem; left: 625px; position:fixed; z-index:999; top:340px;">
+    <h5 class="card-title">ABOUT US</h5>
+    <p class="card-text">In the "ABOUT US" section we will introduce this website,</p>
+    <p class="card-text">which may give you a little more information about it.</p>
+  </div>
+</div>
+<div class="card bg-transparent text-light border border-secondary rounded-pill" style="height: 200px; width: 730px; position:fixed; z-index:999; top:530px; left: 560px">
+  <div class="card-img-overlay" style="height: 30rem; width: 55rem; left: 625px; position:fixed; z-index:999; top:560px;">
+    <h5 class="card-title">REFERENCE</h5>
+    <p class="card-text">This is the site of some pictures and other content of the reference, if you like,</p>
+    <p class="card-text">you can click according to the path query.</p>
+  </div>
+</div>
+{% endblock %}

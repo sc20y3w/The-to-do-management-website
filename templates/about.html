@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{##Inheriting the base template.#}
+
+{% block title %}
+
+{% endblock %}
+
+{% block head %}
+HELP
+{% endblock %}
+
+{% block body %}
+{#    # The card which in the left part of the page.#}
+{#    # And it used the bootstrap template.#}
+    <div class="ml-n5">
+    <div class="card  m-lg-5 " style="width: 18rem;left: -107px">
+      <div class="card-body">
+        <h5 class="card-title">How can we help you?</h5>
+        <p class="card-text">Select the help you need.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <a href="{{url_for('contact')}}" class="card-link">CONTACT US</a>
+        </li>
+        <li class="list-group-item">
+            <a href="{{url_for('about')}}" class="card-link">ABOUT US</a>
+        </li>
+        <li class="list-group-item">
+            <a href="{{url_for('reference')}}" class="card-link">REFERENCE</a>
+        </li>
+      </ul>
+      <div class="card-body">
+        <a href="{{url_for('index')}}" class="card-link">HOME</a>
+      </div>
+    </div>
+    </div>
+
+{#    # The card which in the right part of the page.#}
+{#    # And it used the bootstrap template.#}
+    <div class="card bg-dark text-white " style="height: 30rem; width: 55rem; left: 450px; position:fixed; z-index:999; top:106px;" >
+      <div class="card-img-overlay">
+          <div style="position:relative; top :42px; left: 82px;">
+            <h5 class="card-title">INTRODUCE</h5>
+            <p class="card-text">The website is used to keep track of our</p>
+            <p class="card-text">to-do list and make our work more efficient.</p>
+            <p class="card-text">You can add jobs and make remarks by your-</p>
+            <p class="card-text">self,or you can add them at will.</p>
+            <p class="card-text">Here you can systematically view all</p>
+            <p class="card-text">unfinished projects and completed projects,</p>
+            <p class="card-text">or by subject. Hope to bring you a good use</p>
+            <p class="card-text">experience.</p>
+          </div>
+      </div>
+      <div style="position:absolute; top :43px; left: 500px; ">
+          <img src="../static/display.jpg" width="290" height="388" alt="A beautiful picture">
+      </div>
+    </div>
+{% endblock %}
